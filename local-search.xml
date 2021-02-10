@@ -4,6 +4,87 @@
   
   
   <entry>
+    <title>insert-sort</title>
+    <link href="/2021/02/09/insert-sort/"/>
+    <url>/2021/02/09/insert-sort/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h1><p>This sort selects the element after the already sorted and compares them to the AS. Smaller than one of AS = switch.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">insert</span> </span>&#123;<br>    <span class="hljs-comment">// Big O Notation: O(n2)</span><br>    <span class="hljs-comment">// Speed: Slow with large lists</span><br>    <span class="hljs-comment">// FOR INTEGER LISTS ONLY</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] intArr = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>&#125;;<br>        System.out.println(Arrays.toString(insertionSortWithIntArray(intArr)));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] insertionSortWithIntArray (<span class="hljs-keyword">int</span>[] intArr) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; intArr.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; j--) &#123;<br>                <span class="hljs-keyword">if</span> (intArr[j] &gt; intArr[i]) &#123;<br>                    <span class="hljs-keyword">int</span> change = intArr[j];<br>                    intArr[j] = intArr[i];<br>                    intArr[i] = change;<br><br>                    i = j;<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> intArr;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Programming</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>select-sort</title>
+    <link href="/2021/02/09/select-sort/"/>
+    <url>/2021/02/09/select-sort/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Selection-Sort"><a href="#Selection-Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h1><p>This sort selects the smallest element in array and puts it at the front.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">select</span> </span>&#123;<br>    <span class="hljs-comment">// Big O Notation: O(n2)</span><br>    <span class="hljs-comment">// Speed: Slow with large lists</span><br>    <span class="hljs-comment">// FOR INTEGER LISTS ONLY</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] selectionSortWithIntArray (<span class="hljs-keyword">int</span>[] intArr) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; intArr.length; i++) &#123;<br>            <span class="hljs-keyword">int</span> min = intArr[i];<br>            <span class="hljs-keyword">int</span> minIndex = i;<br><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; intArr.length; j++) &#123;<br>                <span class="hljs-keyword">if</span> (intArr[j] &lt; min) &#123;<br>                    min = intArr[j];<br>                    minIndex = j;<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-keyword">int</span> innocentNumber = intArr[i];<br>            intArr[i] = intArr[minIndex];<br>            intArr[minIndex] = innocentNumber;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> intArr;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Programming</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Bubble Sort</title>
+    <link href="/2021/02/09/bubble-sort/"/>
+    <url>/2021/02/09/bubble-sort/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Bubble-Sort"><a href="#Bubble-Sort" class="headerlink" title="Bubble Sort"></a>Bubble Sort</h1><p>This sort compares elements one by one and switches them, “bubbling” the smallest elements to the front.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">bubble</span> </span>&#123;<br>    <span class="hljs-comment">// Big O Notation: O(n2)</span><br>    <span class="hljs-comment">// Speed: Slow with large lists</span><br>    <span class="hljs-comment">// FOR INTEGER LISTS ONLY</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] bubbleSortIntArray (<span class="hljs-keyword">int</span>[] intArray) &#123;<br>        <span class="hljs-keyword">int</span> change = <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x = intArray.length - <span class="hljs-number">1</span>; x &gt;= <span class="hljs-number">0</span>; x--) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> y = x - <span class="hljs-number">1</span>; y &gt;= <span class="hljs-number">0</span>; y--) &#123;<br>                <span class="hljs-keyword">if</span> (intArray[x] &lt; intArray[y]) &#123;<br>                    change = intArray[x];<br>                    intArray[x] = intArray[y];<br>                    intArray[y] = change;<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> intArray;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Coding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Programming</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Student Project</title>
     <link href="/2021/01/06/student-project/"/>
     <url>/2021/01/06/student-project/</url>
